@@ -116,7 +116,9 @@ import Distribution.PackageDescription.Parsec
 -- It reads the package description file using IO, and performs the
 -- action specified on the command line.
 defaultMain :: IO ()
-defaultMain = getArgs >>= defaultMainHelper simpleUserHooks
+defaultMain = do
+  error "patched version"
+  getArgs >>= defaultMainHelper simpleUserHooks
 
 -- | A version of 'defaultMain' that is passed the command line
 -- arguments, rather than getting them from the environment.
